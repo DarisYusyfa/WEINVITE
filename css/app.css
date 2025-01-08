@@ -1,0 +1,150 @@
+*::-webkit-scrollbar {
+  width: 0.875rem;
+}
+
+*::-webkit-scrollbar-button {
+  display: none;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  border: 0.25rem solid transparent;
+  background-clip: content-box;
+  background-color: #bbbbbb;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #aaaaaa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow: overlay;
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 0 !important;
+}
+
+.font-estetik {
+  font-family: 'Sacramento', cursive !important;
+  color: #ffffff !important;
+}
+
+.cropper {
+  width: 14rem;
+  height: 14rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.cropper > img {
+  display: inline;
+  margin: 0 auto;
+  height: auto;
+  width: 100%;
+}
+
+.btn-music {
+  position: fixed;
+  bottom: 9vh;
+  right: 2vh;
+  z-index: 1055;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #212529;
+  z-index: 1055 !important;
+}
+
+.card-body {
+  overflow-wrap: break-word !important;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 150px; /* Sesuaikan ukuran lingkaran */
+  height: 150px; /* Sesuaikan ukuran lingkaran */
+  margin: 0 auto;
+  border-radius: 50%;
+  background: url('assets/images/9.png') no-repeat center center;
+  background-size: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* Sesuaikan ukuran gambar */
+  height: 80%; /* Sesuaikan ukuran gambar */
+  border-radius: 50%;
+  border: 5px solid white; /* Border putih untuk gambar */
+  object-fit: cover;
+  z-index: 2;
+}
+
+/* Kontainer animasi mouse */
+.mouse-animation {
+  width: 30px; /* Lebar elemen */
+  height: 50px; /* Tinggi elemen */
+  position: relative; /* Untuk menempatkan scroll-animation di dalamnya */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px; /* Membuat ujung lingkaran */
+}
+
+/* Bola yang bergerak */
+.scroll-animation {
+  width: 10px; /* Lebar bola */
+  height: 10px; /* Tinggi bola */
+  background-color: #6c757d; /* Warna bola */
+  border-radius: 50%; /* Membuat bola berbentuk lingkaran */
+  animation: scrollDown 1.5s infinite; /* Animasi bergerak terus-menerus */
+}
+
+/* Keyframes untuk animasi */
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0); /* Posisi awal */
+    opacity: 1; /* Bola terlihat penuh */
+  }
+  50% {
+    transform: translateY(20px); /* Bola bergerak ke bawah */
+    opacity: 0.5; /* Transparansi berkurang */
+  }
+  100% {
+    transform: translateY(0); /* Kembali ke posisi awal */
+    opacity: 1; /* Bola kembali terlihat penuh */
+  }
+}
+
+.copy-btn {
+  color: gray; /* Mengubah warna teks dan ikon menjadi putih */
+  transition: color 0.3s ease; /* Efek transisi saat hover */
+}
+
+.copy-btn:hover {
+  color: white; /* Mengubah warna teks dan ikon menjadi abu-abu saat hover */
+}
+
+.copy-btn i {
+  color: gray; /* Mengubah warna ikon menjadi putih */
+}
+
+.copy-btn:hover i {
+  color: white; /* Mengubah warna ikon menjadi abu-abu saat hover */
+}

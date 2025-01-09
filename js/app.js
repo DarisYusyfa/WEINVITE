@@ -461,3 +461,28 @@ function showNotification() {
     notification.style.display = 'none';
   }, 3000);
 }
+
+const undangan = {
+  util: {
+    copy: function (button, successMessage) {
+      // Ambil teks dari atribut data-copy
+      const textToCopy = button.getAttribute('data-copy');
+
+      // Gunakan navigator.clipboard untuk menyalin teks
+      navigator.clipboard
+        .writeText(textToCopy)
+        .then(() => {
+          // Ganti teks tombol dengan pesan sukses
+          button.innerHTML = `<i class="fa-solid fa-check me-1"></i> ${successMessage}`;
+
+          // Kembalikan teks tombol ke asal setelah beberapa detik
+          setTimeout(() => {
+            button.innerHTML = `<i class="fa-solid fa-copy me-1"></i> Salin`;
+          }, 2000);
+        })
+        .catch((err) => {
+          console.error('Gagal menyalin teks:', err);
+        });
+    },
+  },
+};
